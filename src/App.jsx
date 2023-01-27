@@ -64,11 +64,13 @@ function App() {
       {arr.map(item => {
         return (
           <div key={item.id}>
-          <h3>{item.text}</h3>
+          <h3>
+          {item.done ? <span style={{backgroundColor: "green", padding: ".5rem" , borderRadius: ".5rem"}}>{item.text}</span> : <span style={{backgroundColor: "red" , padding: ".5rem", borderRadius: ".5rem"}}>{item.text}</span>}
+            </h3>
           <button onClick={() => handleDone(item.id, item.done)}>
             {item.done ? "Undo" : "Done"}
             </button>
-          <button onClick={() => handleDelete(item.id)}>Ta bort</button>
+          <button onClick={() => handleDelete(item.id)}>Delete</button>
     </div>
         )
       })}
